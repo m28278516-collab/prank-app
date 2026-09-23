@@ -24,11 +24,13 @@ jobs:
 
       - name: Install buildozer
         run: |
-          pip install --upgrade pip
+          pip install "pip<24" setuptools wheel
           pip install buildozer cython
 
       - name: Build APK
         run: |
+          echo "pip<24" > /tmp/pip_constraint.txt
+          export PIP_CONSTRAINT=/tmp/pip_constraint.txt
           yes | buildozer -v android debug
 
       - name: Upload APK
