@@ -9,6 +9,8 @@ source.include_patterns = sound.wav
 
 version = 1.0
 requirements = python3,kivy,pyjnius,android
+p4a.fork = kivy
+p4a.branch = v2024.01.21
 
 orientation = portrait
 fullscreen = 1
